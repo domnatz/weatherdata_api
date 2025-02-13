@@ -56,7 +56,7 @@ def main():
     Main function to fetch weather data every 60 seconds and write it to a CSV file.
     """
     api_key = "eb740340da3846059dc4264b1962d705"  
-    city = "Davao" 
+    city = "Bacolod" 
     file_name = "weather_data.csv"  
 
     while True:
@@ -69,7 +69,7 @@ def main():
             # Weather data to the CSV file
             write_to_csv(weather_data, file_name)
         else:
-            # Print an error message if the weather data fetch fails
+            # Error message if the weather data fetch does not work
             print("Failed to fetch weather data.")
         # 60 second interval for API call
         time.sleep(60)
