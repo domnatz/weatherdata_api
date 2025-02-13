@@ -9,11 +9,11 @@ def fetch_weather_data(api_key, city):
     Fetches current weather data for the specified city using the Weatherbit API.
 
     Parameters:
-    - api_key (str): The API key for accessing the Weatherbit API.
-    - city (str): The name of the city for which to fetch weather data.
+    - api_key 
+    - city 
 
     Returns:
-    - dict: A dictionary containing the weather data (timestamp, city, temperature, humidity, weather description).
+    - dict: A dictionary containing the weather data
     """
     # API URL 
     url = f"https://api.weatherbit.io/v2.0/current?city={city}&key={api_key}&units=M"
@@ -42,7 +42,7 @@ def write_to_csv(data, file_name):
 
     Parameters:
     - data (dict): The weather data to write to the CSV file.
-    - file_name (str): The name of the CSV file.
+    - file_name 
     """
     # Convert the data dictionary to a DataFrame
     df = pd.DataFrame([data])
@@ -62,7 +62,7 @@ def main():
     while True:
         # Fetch weather data 
         weather_data = fetch_weather_data(api_key, city)
-        # Check if the weather data is not None
+        # Check if the weather data is not none
         if weather_data:
             # Output for the console (weather data)
             print(f"Fetched Data: {weather_data}")
@@ -71,9 +71,9 @@ def main():
         else:
             # Print an error message if the weather data fetch fails
             print("Failed to fetch weather data.")
-        # Wait for 60 seconds before fetching the data again
+        # 60 second interval for API call
         time.sleep(60)
 
 if __name__ == "__main__":
-    # Check if the script is being run directly
+    # Check if the script is run directly
     main()  
