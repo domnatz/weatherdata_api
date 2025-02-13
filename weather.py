@@ -56,7 +56,7 @@ def main():
     Main function to fetch weather data every 60 seconds and write it to a CSV file.
     """
     api_key = "eb740340da3846059dc4264b1962d705"  
-    city = "Dumaguete" 
+    city = "Davao" 
     file_name = "weather_data.csv"  
 
     while True:
