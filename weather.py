@@ -6,7 +6,7 @@ import os  # Checking file existence
 
 def fetch_weather_data(api_key, city):
     """
-    Fetches current weather data for the specified city using the Weatherbit API.
+    Fetches current weather data using the Weatherbit API.
 
     Parameters:
     - api_key 
@@ -22,7 +22,7 @@ def fetch_weather_data(api_key, city):
     if response.status_code == 200:
         # Parse JSON response
         data = response.json()
-        # Extract the relevant weather data and store it in a dictionary
+        # Get relevant weather data and store it in a dictionary
         weather_data = {
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),  # Current timestamp 
             "city": city,  # City name
@@ -32,7 +32,7 @@ def fetch_weather_data(api_key, city):
         }
         return weather_data  # Return the weather data as a dictionary
     else:
-        # Error handling for failed API request
+        # Error handling 
         print(f"Error: {response.status_code}")
         return None  # Return none if the API request fails
 
@@ -41,7 +41,7 @@ def write_to_csv(data, file_name):
     Writes weather data to a CSV file.
 
     Parameters:
-    - data (dict): The weather data to write to the CSV file.
+    - data 
     - file_name 
     """
     # Convert the data dictionary to a DataFrame
@@ -75,5 +75,4 @@ def main():
         time.sleep(60)
 
 if __name__ == "__main__":
-    # Check if the script is run directly
     main()  
