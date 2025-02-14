@@ -1,6 +1,6 @@
-import requests  # Make API calls
-import pandas as pd  # Handle CSV file operations
-import time  # Add delays between API calls
+import requests  #  API calls
+import pandas as pd  # CSV file operations
+import time  # Add delays to API calls
 from datetime import datetime  # Handle date and time
 import os  # Checking file existence
 
@@ -56,7 +56,7 @@ def main():
     Main function to fetch weather data every 60 seconds and write it to a CSV file.
     """
     api_key = "eb740340da3846059dc4264b1962d705"  
-    city = "Bacolod" 
+    city = "Manila" 
     file_name = "weather_data.csv"  
 
     while True:
@@ -69,7 +69,7 @@ def main():
             # Weather data to the CSV file
             write_to_csv(weather_data, file_name)
         else:
-            # Error message if the weather data fetch does not work
+            # Error message 
             print("Failed to fetch weather data.")
         # 60 second interval for API call
         time.sleep(60)
